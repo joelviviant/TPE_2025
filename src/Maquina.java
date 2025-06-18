@@ -1,10 +1,14 @@
 public class Maquina {
-    String nombre;
-    int piezas;
+    private final String nombre;
+    private final int piezas;
 
     public Maquina(String nombre, int piezas) {
         this.nombre = nombre;
         this.piezas = piezas;
+    }
+
+    public int getPiezas() {
+        return piezas;
     }
 
     @Override
