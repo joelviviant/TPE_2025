@@ -7,8 +7,16 @@ public class BacktrackingSolver {
     private int estadosGenerados;
     private Solucion mejorSolucion;
 
+    /*
+     * Estrategia Backtracking:
+     * - Se construye un árbol de exploración en el que cada nodo representa una secuencia parcial de máquinas.
+     * - Estados finales: cuando la suma de piezas alcanzadas es igual al objetivo.
+     * - Estados solución: aquellos estados finales con menor cantidad de puestas en marcha.
+     * - Podas: si la suma supera el objetivo o si la secuencia actual ya es peor que la mejor solución conocida.
+     * - Se cuenta la cantidad de estados generados como métrica de costo.
+     */
+
     public BacktrackingSolver(List<Maquina> maquinas, int objetivo) {
-        // defensiva: lista inmutable
         this.maquinas = List.copyOf(maquinas);
         this.objetivo = objetivo;
         this.estadosGenerados = 0;

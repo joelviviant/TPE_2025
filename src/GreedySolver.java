@@ -6,6 +6,17 @@ public class GreedySolver {
     private final List<Maquina> maquinas;
     private final int objetivo;
 
+    /*
+     * Estrategia Greedy:
+     *
+     * - En cada paso, se consideran como candidatos todas las máquinas disponibles.
+     * - Se selecciona la máquina que más piezas produce sin exceder el objetivo restante.
+     * - Se repite hasta alcanzar el total de piezas o hasta que ya no haya candidatos válidos.
+     * - No garantiza una solución óptima, pero es eficiente en tiempo.
+     * - Un estado solución es cualquier secuencia que alcanza exactamente la cantidad objetivo.
+     * - Se cuenta la cantidad de candidatos evaluados como métrica de costo.
+     */
+
     public GreedySolver(List<Maquina> maquinas, int objetivo) {
         this.maquinas = new ArrayList<>(maquinas);
         this.objetivo = objetivo;
